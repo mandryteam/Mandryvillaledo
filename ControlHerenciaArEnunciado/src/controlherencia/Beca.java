@@ -2,9 +2,9 @@ package controlherencia;
 
 public class Beca {
 
-	private String dnialumno;
+	private static String dnialumno;
 	protected double renta;
-	protected int puntuacion;
+	protected static int puntuacion;
 		
 	public Beca(String dnialumno, double renta) {
 		super();
@@ -12,7 +12,7 @@ public class Beca {
 		this.renta = renta;
 	}
 
-	public String getDnialumno() {
+	public static String getDnialumno() {
 		return dnialumno;
 	}
 
@@ -33,7 +33,7 @@ public class Beca {
 	}
 	
 	
-	public int getPuntuacion(){
+	public static int getPuntuacion(){
 		return puntuacion;
 	}
 
