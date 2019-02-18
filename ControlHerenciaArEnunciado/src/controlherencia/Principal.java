@@ -52,7 +52,7 @@ public class Principal {
 			System.out.println(becas.toString());	
 		}
 		
-		/*
+		/*------------------------------------------------------------------------------------------------------------------------
 		System.out.println("Ordenamos las becas por puntos, y a puntos iguales por menos renta***********");
 		int j,k;
 		Beca aux;
@@ -69,9 +69,16 @@ public class Principal {
 		
 				
 			}
-		 */
+		 ------------------------------------------------------------------------------------------------------------------------*/
 		
-		becas.sort(Beca.getPuntuacion());
+		//mira esto yandry
+		for (int i = 0; i < becas.size(); i++) {
+			becas.get(i);
+			int [] a = becas.get(i).darPuntuacion();
+			
+			Beca.sort(a);
+		}
+		
 		
 		/* Mostramos las puntuaciones de todas las becas */
 		for(int cont=0; cont < numBecas; cont++)
