@@ -7,7 +7,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
 		
-		Beca becas[]=new Beca[MAXBECAS];
+		Vector <Beca> becas=new Vector();
 		int numBecas=0;
 		
 		int menu;
