@@ -28,8 +28,10 @@ public class Principal {
 					double renta=sc.nextDouble();
 					sc.nextLine();
 					
+					System.out.println("Indica la beca que tienes\n1.Normal\n2.FP\n3.Libro");
+					
 									
-					becas[numBecas]=new Beca(dni, renta);
+					becas.add(new Beca(dni,renta));
 					numBecas++;
 						
 				}
@@ -73,10 +75,10 @@ public class Principal {
 	}
 
 	
-	public static int buscarDni(String dni, Beca becas[],int tam){
+	public static int buscarDni(String dni, Vector<Beca> becas,int tam){
 		
 		for(int cont=0; cont < tam;cont++)
-			if(becas[cont].getDnialumno().equals(dni))
+			if(becas.getDnialumno().equals(dni))
 				return cont;
 		return -1;
 	}
