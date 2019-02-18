@@ -65,7 +65,7 @@ public class Principal {
 					aux=Beca[k];
 					Beca[k]=Beca[k+1];
 					Beca[k+1]= aux;				
-				}
+				}e
 		
 				
 			}
