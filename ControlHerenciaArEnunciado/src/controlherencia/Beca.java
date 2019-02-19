@@ -1,10 +1,10 @@
 package controlherencia;
 
-public class Beca {
+public abstract class Beca {
 
-	private static String dnialumno;
+	private String dnialumno;
 	protected double renta;
-	protected static int puntuacion;
+	protected int puntuacion;
 		
 	public Beca(String dnialumno, double renta) {
 		super();
@@ -12,7 +12,7 @@ public class Beca {
 		this.renta = renta;
 	}
 
-	public static String getDnialumno() {
+	public String getDnialumno() {
 		return dnialumno;
 	}
 
@@ -24,23 +24,22 @@ public class Beca {
 		this.renta = renta;
 	}
 
-	public int darPuntuacion() {
-			if(renta < 6000)
-				puntuacion=2;
-			if(renta >= 6000 && renta <= 10000)
-				puntuacion=1;
-			return puntuacion;
-	}
+	abstract public void darPuntuacion();
 	
 	
-	public static int getPuntuacion(){
+
+	public int getPuntuacion() {
 		return puntuacion;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Dni= " + dnialumno + ", Renta= " + renta +", puntuacion= " + puntuacion;
+		return "Beca [dnialumno=" + dnialumno + ", renta=" + renta + "]";
 	}
 	
+
+
 	
 }

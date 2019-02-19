@@ -28,11 +28,27 @@ public class Principal {
 					double renta=sc.nextDouble();
 					sc.nextLine();
 					
-					System.out.println("Indica la beca que tienes\n1.Normal\n2.FP\n3.Libro");
+					System.out.println("Indica la beca que tienes\n2.FP\n3.Libro");
+					int op=sc.nextInt();
+					if(op==2) {
+						sc.nextLine();
+						System.out.println("Indique su ciudad");
+						String ciu=sc.nextLine();
+						
+						becas.add(new BecaFP(dni, renta, ciu));
+						numBecas++;	
+						
+						
+					}
+					if(op==3) {
+						
+						System.out.println("Indique su nota");
+						double nota=sc.nextDouble();
+						becas.add(new BecaLB(dni,renta,nota));
+						numBecas++;
+						
+					}
 					
-									
-					becas.add(new Beca(dni,renta));
-					numBecas++;
 						
 				}
 				else
@@ -42,47 +58,49 @@ public class Principal {
 					break;
 				System.out.println("Añadir otra solicitud:1. Si\n2. No");
 				menu=sc.nextInt();
-			
+				sc.nextLine();
 		}while(menu==1);
+		
 		
 		System.out.println("Damos puntuación a las becas*************");
 		
-		for(int cont=0; cont < numBecas; cont++){
-			Beca.getPuntuacion();
-			System.out.println(becas.toString());	
+		for(int cont=0; cont < becas.size(); cont++){
+			becas.get(cont).darPuntuacion();
+			
+				for (int i = 0; i < numBecas; i++) {
+					
+				
+				System.out.println("la informaçao es:");
+				System.out.println(becas.get(i).toString());
+				}
+				
+			
 		}
 		
-		/*------------------------------------------------------------------------------------------------------------------------
+		
 		System.out.println("Ordenamos las becas por puntos, y a puntos iguales por menos renta***********");
 		int j,k;
 		Beca aux;
 		for(j = 1; j < numBecas; j++)
 			for(k = 0; k < numBecas-1; k++){
 				
-				if(Becas.getPuntuacion() < Beca.getPuntuacion()[k+1]  || 
-				   Beca[k].getPuntuacion() == Beca[k+1].getPuntuacion() && Beca[k].getRenta() > Beca[k+1].getRenta()){
+				if(becas.get(j).getPuntuacion() < becas.get(k+1).getPuntuacion()  || 
+				   becas.get(k).getPuntuacion()== becas.get(k+1).getPuntuacion() && becas.get(k).getRenta() > becas.get(k+1).getRenta()){
 					
-					aux=Beca[k];
-					Beca[k]=Beca[k+1];
-					Beca[k+1]= aux;				
-				}e
+					aux=becas.get(k);
+					becas.set(k,becas.get(k+1));
+					becas.set(k+1,aux);				
+				}
 		
 				
 			}
-		 ------------------------------------------------------------------------------------------------------------------------*/
-		
-		//mira esto yandry
-		for (int i = 0; i < becas.size(); i++) {
-			becas.get(i);
-			int [] a = becas.get(i).darPuntuacion();
-			
-			Beca.sort(a);
-		}
+		 
 		
 		
 		/* Mostramos las puntuaciones de todas las becas */
-		for(int cont=0; cont < numBecas; cont++)
-			System.out.println(Beca.getPuntuacion());
+		System.out.println("Mostramos las puntuaciones de todas las becas");
+		for(int cont=0; cont < becas.size(); cont++)
+			System.out.println(becas.get(cont).getPuntuacion());
 						
 	}
 
@@ -90,7 +108,7 @@ public class Principal {
 	public static int buscarDni(String dni, Vector<Beca> becas,int tam){
 		
 		for(int cont=0; cont < tam;cont++)
-			if(Beca.getDnialumno().equals(dni))
+			if(becas.get(cont).getDnialumno().equals(dni))
 				return cont;
 		return -1;
 	}
