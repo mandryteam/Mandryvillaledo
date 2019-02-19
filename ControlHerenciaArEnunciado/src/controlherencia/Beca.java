@@ -5,6 +5,7 @@ public abstract class Beca {
 	private String dnialumno;
 	protected double renta;
 	protected int puntuacion;
+	protected boolean fp;
 		
 	public Beca(String dnialumno, double renta) {
 		super();
@@ -31,8 +32,13 @@ public abstract class Beca {
 	public int getPuntuacion() {
 		return puntuacion;
 	}
+	
+	
 
 
+	public boolean isFp() {
+		return fp;
+	}
 
 	@Override
 	public String toString() {

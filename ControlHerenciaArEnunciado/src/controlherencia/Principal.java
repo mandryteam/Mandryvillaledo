@@ -71,7 +71,7 @@ public class Principal {
 					
 				
 				System.out.println("la informaçao es:");
-				System.out.println(becas.get(i).toString());
+				System.out.println(becas.get(i));
 				}
 				
 			
@@ -100,9 +100,22 @@ public class Principal {
 		/* Mostramos las puntuaciones de todas las becas */
 		System.out.println("Mostramos las puntuaciones de todas las becas");
 		for(int cont=0; cont < becas.size(); cont++)
-			System.out.println(becas.get(cont).getPuntuacion());
-						
+			System.out.println(becas.get(cont).getPuntuacion()+": "+becas.get(cont).getDnialumno());
+		
+		
+		/* Ahora buscamos todas las FP y borraremos si tienen puntuacion 0 */
+		
+		buscarFP(becas, numBecas);
+		System.out.println("Las becas han sido borradas");
+		
+		
+		System.out.println("Las becas restantes son estas");
+		System.out.println(becas.toString());
+		
 	}
+	
+	
+		
 
 	
 	public static int buscarDni(String dni, Vector<Beca> becas,int tam){
@@ -114,5 +127,33 @@ public class Principal {
 	}
 	
 	
+public static void buscarFP(Vector<Beca> becas,int tam){
+		
+		for(int cont=0; cont < tam;cont++) {
+			if(becas.get(cont).isFp()==true) {
+				if(becas.get(cont).getPuntuacion()==0) {
+					System.out.println("esta beca va a ser borrada"+becas.get(cont));
+					becas.remove(cont);
+				}
+			}
+			
+			
+			
+			
+			
+			/*if(becas.get(cont).isFp()==true) {
+				for (int i = 0; i < cont; i++) {
+					if(becas.get(i).getPuntuacion()==0){
+						System.out.println("esta beca va a ser borrada"+becas.get(i));
+						becas.remove(i);
+						
+					}
+					break;
+				}
+				
+			}*/
+		}
 	
+	
+}
 }

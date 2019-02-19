@@ -1,7 +1,7 @@
 package controlherencia;
 
 public    class BecaFP extends Beca{
-private int cont;
+private static int cont;
 private int numero;
 private String ciudad;
 private String sigla;
@@ -14,7 +14,7 @@ public BecaFP(String dnialumno, double renta, String ciudad) {
     numero=cont;
 	this.numero=numero;
 	this.sigla = "FP"+this.numero;
-	
+	this.fp=true;
 	this.ciudad=ciudad;
 	
 }
@@ -45,6 +45,8 @@ public String getSigla() {
 
 
 
+
+
 public void darPuntuacion() {
 	if(ciudad.equalsIgnoreCase("Madrid"))
 		puntuacion++;
@@ -62,6 +64,10 @@ public void darPuntuacion() {
 
 public int getpuntuacion() {
 	return puntuacion;
+}
+
+public boolean isFp() {
+	return fp;
 }
 
 
