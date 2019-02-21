@@ -18,7 +18,9 @@ public class Principal {
 		do{
 			
 			
+
 				System.out.println("DnI del solicitante: "); //intento hacer un cambio sin pull
+
 				String dni=sc.nextLine();
 				
 				int encontrado=buscarDni(dni, becas, numBecas);
