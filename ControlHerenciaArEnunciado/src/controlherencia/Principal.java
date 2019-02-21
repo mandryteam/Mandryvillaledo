@@ -18,7 +18,7 @@ public class Principal {
 		do{
 			
 			
-				System.out.println("Dni del solicitante: ");
+				System.out.println("DNI del solicitante: ");//pongo DNI en MAYUSC para que cree un conflicto
 				String dni=sc.nextLine();
 				
 				int encontrado=buscarDni(dni, becas, numBecas);
